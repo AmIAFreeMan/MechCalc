@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+            prefWidth="600" prefHeight="400"
+            fx:controller="Navigation.MainController">
+            
+    <left>      
+        <fx:include source="NavBar.fxml" fx:id="navBar" />
+    </left>
+
+    <center> 
+        <StackPane fx:id="contentArea" style="-fx-background-color: #ecf0f1;"/>
+    </center>
+
+</BorderPane>

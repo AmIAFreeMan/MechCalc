@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="350.0" prefWidth="500.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.End_PivotsController">
+    <padding>
+        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+    </padding>
+
+    <!-- Header -->
+    <Label text="Shaft Diameter Calculator">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Section: Data Input -->
+    <Label text="Input Parameters" textFill="#555555">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+    <!-- Text Fields (2x2 Grid Layout) -->
+    <GridPane hgap="20.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="60.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+            <ColumnConstraints halignment="RIGHT" minWidth="60.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+        </columnConstraints>
+
+        <!-- Row 0 -->
+        <Label text="Fa:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="Fa_Text" promptText="Enter Fa" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="σ amf:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <TextField fx:id="sigma_amf_Text" promptText="Enter σ amf" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+        <!-- Row 1 -->
+        <Label text="L/d:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="L_d_Text" promptText="Enter L/d ratio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Mfi:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="Mfi_Text" promptText="Enter Mfi" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <Separator />
+
+    <!-- Section: Actions and Results -->
+    <Label text="Calculations &amp; Results" textFill="#555555">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+    <!-- Buttons and Labels linked together -->
+    <GridPane hgap="20.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints minWidth="240.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <!-- Action 1: Standard Shaft Diameter -->
+        <Button text="Calculate Shaft Diameter" onAction="#Calc_Shaft_Diameter" prefWidth="240.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="L_Calc_Shaft_Diameter" text="---" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <!-- Action 2: Intermediate Shaft Diameter -->
+        <Button text="Calculate Intermediate Shaft Dia." onAction="#Calc_Intermediate_Shaft_Diameter" prefWidth="240.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="L_Calc_Intermediate_Shaft_Diameter" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </GridPane>
+
+</VBox>

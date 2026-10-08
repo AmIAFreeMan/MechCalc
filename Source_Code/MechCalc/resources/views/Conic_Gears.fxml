@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- ScrollPane wraps the entire VBox -->
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Conic_GearsController">
+    <content>
+        <VBox prefHeight="700.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+            </padding>
+
+            <!-- Header -->
+            <Label text="Gear Data Calculator (CG)">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+
+            <!-- Section: Data Input -->
+            <Label text="Input Parameters" textFill="#555555">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <!-- Text Fields (2-column layout to save space) -->
+            <GridPane hgap="20.0" vgap="10.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="40.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" />
+                    <ColumnConstraints halignment="RIGHT" minWidth="40.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" />
+                </columnConstraints>
+
+                <!-- Row 0 -->
+                <Label text="Mt:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="Mt_TextField" promptText="Mt" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Mt1:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="Mt1_TextField" promptText="Mt1" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <!-- Row 1 -->
+                <Label text="E:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="E_TextField" promptText="E" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="λm:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="lambda_m_TextField" promptText="lambda_m" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <!-- Row 2 -->
+                <Label text="y:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="y_TextField" promptText="y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="a:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="a_TextField" promptText="a" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <!-- Row 3 -->
+                <Label text="σ:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="sigma_TextField" promptText="sigma" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="σ1:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="sigma1_TextField" promptText="sigma1" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                <!-- Row 4 -->
+                <Label text="σ2:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="sigma2_TextField" promptText="sigma2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="mm:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="mm_TextField" promptText="mm" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                <!-- Row 5 -->
+                <Label text="δ:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="delta_TextField" promptText="delta" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="pam:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <TextField fx:id="pam_TextField" promptText="pam" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+
+                <!-- Row 6 -->
+                <Label text="K1:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <TextField fx:id="K1_TextField" promptText="K1" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="kc:" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <TextField fx:id="kc_TextField" promptText="kc input" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+
+                <!-- Row 7 -->
+                <Label text="z:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <TextField fx:id="z_TextField" promptText="z" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Label text="z1:" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <TextField fx:id="z1_TextField" promptText="z1" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+
+                <!-- Row 8 -->
+                <Label text="z2:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <TextField fx:id="z2_TextField" promptText="z2" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <Label text="b:" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <TextField fx:id="b_TextField" promptText="b" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+
+                <!-- Row 9 -->
+                <Label text="d1m:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <TextField fx:id="d1m_TextField" promptText="d1m" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <Label text="d2m:" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <TextField fx:id="d2m_TextField" promptText="d2m" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            </GridPane>
+
+            <Separator />
+
+            <!-- Section: Actions and Results -->
+            <Label text="Calculations &amp; Results" textFill="#555555">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <!-- Buttons and Labels linked together -->
+            <GridPane hgap="20.0" vgap="12.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="200.0" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <!-- Action 1 -->
+                <Button text="Calc Medium Module Break" onAction="#Medium_Module_Break_CG" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="L_Medium_Module_Break_CG" text="---" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 2 -->
+                <Button text="Calc Max Module Break" onAction="#Max_Module_Break_CG" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="L_Max_Module_Break_CG" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 3 -->
+                <Button text="Calc Medium Module Wear" onAction="#Medium_Module_Wear_CG" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="L_Medium_Module_Wear_CG" text="---" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 4 -->
+                <Button text="Calculate kc Wear" onAction="#kc_Wear_CG" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="L_kc_Wear_CG" text="---" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 5 -->
+                <Button text="Verify Wear" onAction="#Verify_Wear_CG" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="L_Verify_Wear_CG" text="---" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+            </GridPane>
+        </VBox>
+    </content>
+</ScrollPane>

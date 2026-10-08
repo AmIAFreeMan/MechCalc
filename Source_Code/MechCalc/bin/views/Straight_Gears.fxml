@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Straight_GearsController">
+    <content>
+        <VBox prefHeight="880.0" prefWidth="650.0" spacing="20.0" style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+            </padding>
+
+            <!-- Header -->
+            <Label text="Straight Gear Analysis Calculator">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+
+            <!-- Configuration Options -->
+            <HBox alignment="CENTER" spacing="30.0" style="-fx-background-color: #f4f4f4; -fx-padding: 10; -fx-background-radius: 5;">
+                <RadioButton fx:id="Precise_Gears" text="Precise Gears">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="ExternalGear" selected="true" text="External Gear">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </RadioButton>
+            </HBox>
+
+            <!-- Section: Data Input -->
+            <Label text="Input Parameters" textFill="#555555">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <!-- Text Fields Grid Layout (4-column) -->
+            <GridPane hgap="15.0" vgap="10.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="80.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+                    <ColumnConstraints halignment="RIGHT" minWidth="80.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+                </columnConstraints>
+
+                <!-- Row 0 -->
+                <Label text="σ:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="sigma_Text" promptText="Enter σ" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Mt:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="Mt_Text" promptText="Enter Mt" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <!-- Row 1 -->
+                <Label text="λ:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="lambda_Text" promptText="Enter λ" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="z:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="z_Text" promptText="Enter z" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <!-- Row 2 -->
+                <Label text="σ am:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="sigma_am_Text" promptText="Enter σ am" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Lewis No:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="Lewis_number_Text" promptText="Enter Lewis No." GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <!-- Row 3 -->
+                <Label text="V:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="V_Text" promptText="Enter V" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Mt1:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="Mt1_Text" promptText="Enter Mt1" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                <!-- Row 4 -->
+                <Label text="k:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="k_Text" promptText="Enter k" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="p am:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="p_am_Text" promptText="Enter p am" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                <!-- Row 5 -->
+                <Label text="p max:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="p_max_Text" promptText="Enter p max" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="B:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <TextField fx:id="B_Text" promptText="Enter B" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+
+                <!-- Row 6 -->
+                <Label text="H:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <TextField fx:id="H_Text" promptText="Enter H" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="n1:" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <TextField fx:id="n1_Text" promptText="Enter n1" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+
+                <!-- Row 7 -->
+                <Label text="h:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <TextField fx:id="h_Text" promptText="Enter h" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Label text="K1:" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <TextField fx:id="K1_Text" promptText="Enter K1" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+
+                <!-- Row 8 -->
+                <Label text="at:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <TextField fx:id="at_Text" promptText="Enter at" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <Label text="z1:" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <TextField fx:id="z1_Text" promptText="Enter z1" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+
+                <!-- Row 9 -->
+                <Label text="z2:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <TextField fx:id="z2_Text" promptText="Enter z2" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <Label text="E1:" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <TextField fx:id="E1_Text" promptText="Enter E1" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+
+                <!-- Row 10 -->
+                <Label text="E2:" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                <TextField fx:id="E2_Text" promptText="Enter E2" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                <Label text="b:" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                <TextField fx:id="b_Text" promptText="Enter b" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+
+                <!-- Row 11 -->
+                <Label text="d1:" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                <TextField fx:id="d1_Text" promptText="Enter d1" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                <Label text="d2:" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                <TextField fx:id="d2_Text" promptText="Enter d2" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+
+                <!-- Row 12 -->
+                <Label text="f:" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+                <TextField fx:id="f_Text" promptText="Enter f" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            </GridPane>
+
+            <Separator />
+
+            <!-- Section: Actions and Results -->
+            <Label text="Calculations &amp; Results" textFill="#555555">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <!-- Buttons and Labels linked together -->
+            <GridPane hgap="20.0" vgap="10.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="250.0" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <!-- Action 1: Straight Gear Module -->
+                <Button text="Calculate Straight Gear Module" onAction="#Straight_Gear_Module" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="L_Straight_Gear_Module" text="---" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 2: Sigma Gears A -->
+                <Button text="Calculate Sigma Gears A" onAction="#Sigma_Gears_A" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="L_Sigma_Gears_A" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 3: Straight Gear Dim Wear Module -->
+                <Button text="Calc Dim Wear Module" onAction="#Straight_Gear_Dim_Wear_module" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="L_Straight_Gear_Dim_Wear_module" text="---" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 4: P_am -->
+                <Button text="Calculate p_am" onAction="#P_am" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="L_p_am" text="---" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 5: k -->
+                <Button text="Calculate k" onAction="#k" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="L_k" text="---" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 6: K1 -->
+                <Button text="Calculate K1" onAction="#K1" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label fx:id="L_K1" text="---" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 7: P_max -->
+                <Button text="Calculate P_max" onAction="#P_max" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label fx:id="L_P_max" text="---" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 8: Verify -->
+                <Button text="Verify" onAction="#Verify" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <Label fx:id="L_Verify" text="---" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 9: Gear Performance -->
+                <Button text="Calculate Gear Performance" onAction="#Gear_performance" prefWidth="250.0" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <Label fx:id="L_Gear_performance" text="---" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+            </GridPane>
+        </VBox>
+    </content>
+</ScrollPane>

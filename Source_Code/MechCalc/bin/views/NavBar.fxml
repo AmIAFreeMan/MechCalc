@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Navigation.NavController"
+      stylesheets="@sidebar.css"
+      styleClass="sidebar-container"
+      prefWidth="250.0">
+      
+    <!-- This links all the buttons together so only one is active at a time -->
+    <fx:define>
+        <ToggleGroup fx:id="navGroup" />
+    </fx:define>
+      
+    <Label text="TOPICS" styleClass="sidebar-title">
+        <VBox.margin>
+            <Insets left="20.0" bottom="15.0" top="30.0" />
+        </VBox.margin>
+    </Label>
+
+    <!-- Changed Button to ToggleButton and added the toggleGroup -->
+    <ToggleButton text="Shaft" onAction="#showShaft" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/> 
+    <ToggleButton text="Sigma Tau Verification" onAction="#showSigma_Tau_Verification" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="Belt Transmission" onAction="#showBelt_Transmission" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="Flat Belts" onAction="#showFlat_Belts" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="End Pivots" onAction="#showEnd_Pivots" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>                  
+    <ToggleButton text="Gears" onAction="#showGears" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="Straight Gears" onAction="#showStraight_Gears" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="Conic Gears" onAction="#showConic_Gears" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="Plain Bearings" onAction="#showPlainBearings" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    <ToggleButton text="Rigid Coupling" onAction="#showRigid_Coupling" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>
+    
+    <ToggleButton text="Disclaimer" onAction="#showDisclaimer" toggleGroup="$navGroup" styleClass="nav-button" maxWidth="Infinity"/>          
+</VBox>

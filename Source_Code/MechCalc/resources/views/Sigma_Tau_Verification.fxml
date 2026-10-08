@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="480.0" prefWidth="520.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Sigma_Tau_VerificationController">
+    <padding>
+        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+    </padding>
+
+    <!-- Header -->
+    <Label text="Stress &amp; Load Verification Calculator">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Radio Buttons Selection -->
+    <HBox alignment="CENTER" spacing="25.0" style="-fx-background-color: #f4f4f4; -fx-padding: 10; -fx-background-radius: 5;">
+        <fx:define>
+            <ToggleGroup fx:id="loadTypeToggleGroup" />
+        </fx:define>
+        <RadioButton fx:id="Traction" selected="true" text="Traction" toggleGroup="$loadTypeToggleGroup">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="Fatigue" text="Fatigue" toggleGroup="$loadTypeToggleGroup">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="Variable_Load" text="Variable Load" toggleGroup="$loadTypeToggleGroup">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </RadioButton>
+    </HBox>
+
+    <!-- Section: Data Input -->
+    <Label text="Input Parameters" textFill="#555555">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+    <!-- Text Fields (2-column layout) -->
+    <GridPane hgap="20.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="70.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+            <ColumnConstraints halignment="RIGHT" minWidth="70.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+        </columnConstraints>
+
+        <!-- Row 0 -->
+        <Label text="Rm:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="Rm_Text" promptText="Enter Rm" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="gr:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <TextField fx:id="gr_Text" promptText="Enter gr" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+        <!-- Row 1 -->
+        <Label text="σ:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="sigma_Text" promptText="Enter σ" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="σ ams:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="sigma_ams_Text" promptText="Enter σ ams" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <Separator />
+
+    <!-- Section: Actions and Results -->
+    <Label text="Calculations &amp; Results" textFill="#555555">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+    <!-- Buttons and Labels linked together -->
+    <GridPane hgap="20.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints minWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <!-- Action 1: Calc Sigma -->
+        <Button text="Calculate σ (Sigma)" onAction="#Calc_Sigma" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="L_Calc_Sigma" text="---" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <!-- Action 2: Verify -->
+        <Button text="Verify" onAction="#Verify" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="L_Verify" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </GridPane>
+
+</VBox>

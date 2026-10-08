@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GearsController">
+    <content>
+        <VBox prefHeight="750.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+            </padding>
+
+            <!-- Header -->
+            <Label text="Gear &amp; Kinematics Calculator">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+
+            <!-- Section: Data Input -->
+            <Label text="Input Parameters" textFill="#555555">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <!-- Text Fields (2-column layout) -->
+            <GridPane hgap="20.0" vgap="12.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="60.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+                    <ColumnConstraints halignment="RIGHT" minWidth="60.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+                </columnConstraints>
+
+                <!-- Row 0 -->
+                <Label text="z1:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="z1_Text" promptText="Enter z1" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                
+                <Label text="z2:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="z2_Text" promptText="Enter z2" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <!-- Row 1 -->
+                <Label text="w1:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="w1_Text" promptText="Enter w1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                
+                <Label text="w2:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="w2_Text" promptText="Enter w2" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <!-- Row 2 -->
+                <Label text="diameter:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="diameter_Text" promptText="Enter diameter" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                
+                <Label text="a:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="a_Text" promptText="Enter a" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <!-- Row 3 -->
+                <Label text="z:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="z_Text" promptText="Enter z" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                
+                <Label text="s:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="s_Text" promptText="Enter s" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                <!-- Row 4 -->
+                <Label text="u:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="u_Text" promptText="Enter u" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                
+                <Label text="B:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="B_Text" promptText="Enter B" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                <!-- Row 5 -->
+                <Label text="x:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="x_Text" promptText="Enter x" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            </GridPane>
+
+            <Separator />
+
+            <!-- Section: Actions and Results -->
+            <Label text="Calculations &amp; Results" textFill="#555555">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <!-- Buttons and Labels linked together -->
+            <GridPane hgap="20.0" vgap="12.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="220.0" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <!-- Action 1: Gear Ratio -->
+                <Button text="Calculate Gear Ratio" onAction="#Gear_Ratio" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="L_Gear_Ratio" text="---" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 2: Transmission Ratio -->
+                <Button text="Calculate Transmission Ratio" onAction="#Transmition_Ratio" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="L_Transmition_Ratio" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 3: Gear Step -->
+                <Button text="Calculate Gear Step" onAction="#Gear_Step" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="L_Gear_Step" text="---" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 4: Base Diameter -->
+                <Button text="Calculate Base Diameter" onAction="#Base_Diameter" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="L_Base_Diameter" text="---" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 5: Gear Module Step -->
+                <Button text="Calculate Gear Module Step" onAction="#Gear_Module_Step" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="L_Gear_Module_Step" text="---" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 6: Gear Module Diameter -->
+                <Button text="Calculate Gear Module Dia." onAction="#Gear_Module_diameter" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label fx:id="L_Gear_Module_diameter" text="---" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 7: Minimal Teeth Number -->
+                <Button text="Calculate Min Teeth Number" onAction="#Minimal_Theet_number" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label fx:id="L_Minimal_Theet_number" text="---" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 8: Minimal Teeth Denture Spool -->
+                <Button text="Calculate Min Teeth Spool" onAction="#Minimal_Theet_denture_spool" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <Label fx:id="L_Minimal_Theet_denture_spool" text="---" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 9: REAL Min Teeth Z1 -->
+                <Button text="Calculate Real Min Teeth Z1" onAction="#REAL_Min_Theet_Z1" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <Label fx:id="L_REAL_Min_Theet_Z1" text="---" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <!-- Action 10: REAL Min Teeth Z2 -->
+                <Button text="Calculate Real Min Teeth Z2" onAction="#REAL_Min_Theet_Z2" prefWidth="220.0" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <Label fx:id="L_REAL_Min_Theet_Z2" text="---" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+            </GridPane>
+        </VBox>
+    </content>
+</ScrollPane>

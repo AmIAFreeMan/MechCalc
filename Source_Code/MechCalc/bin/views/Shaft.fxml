@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="550.0" prefWidth="580.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ShaftController">
+    <padding>
+        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+    </padding>
+
+    <!-- Header -->
+    <Label text="Shaft Flexion &amp; Twist Calculator">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Radio Buttons Mode Selection -->
+    <HBox alignment="CENTER" spacing="30.0" style="-fx-background-color: #f4f4f4; -fx-padding: 10; -fx-background-radius: 5;">
+        <fx:define>
+            <ToggleGroup fx:id="modeToggleGroup" />
+        </fx:define>
+        <RadioButton fx:id="Flexion" selected="true" text="Flexion" toggleGroup="$modeToggleGroup">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="Twist" text="Twist" toggleGroup="$modeToggleGroup">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </RadioButton>
+    </HBox>
+
+    <!-- Section: Data Input -->
+    <Label text="Input Parameters" textFill="#555555">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+    <!-- Text Fields Grid Layout -->
+    <GridPane hgap="20.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+            <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" />
+        </columnConstraints>
+
+        <!-- Row 0 -->
+        <Label text="σ / τ:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="sigma_tau_Text" promptText="Enter σ or τ" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="diameter:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <TextField fx:id="diameter_Text" promptText="Enter diameter" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+        <!-- Row 1 -->
+        <Label text="M:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="M_Text" promptText="Enter M" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Mt:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="Mt_Text" promptText="Enter Mt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+        <!-- Row 2 -->
+        <Label text="Mf:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="Mf_Text" promptText="Enter Mf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+
+    <Separator />
+
+    <!-- Section: Actions and Results -->
+    <Label text="Calculations &amp; Results" textFill="#555555">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+    <!-- Buttons and Labels linked together -->
+    <GridPane hgap="20.0" vgap="12.0">
+        <columnConstraints>
+            <ColumnConstraints minWidth="260.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+
+
+        <!-- Action 2: Shaft Diameter Flexion and Twist -->
+        <Button text="Calculate Dia. (F &amp; T)" onAction="#Shaft_Diameter_Flexion_and_Twist" prefWidth="260.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="L_Shaft_Diameter_Flexion_and_Twist" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <!-- Action 3: Ideal Mf -->
+        <Button text="Calculate Ideal Mf" onAction="#Ideal_Mf" prefWidth="260.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label fx:id="L_Ideal_Mf" text="---" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <!-- Action 4: Calc Sigma or Tau From Diameter -->
+        <Button text="Calculate σ or τ From Diameter" onAction="#Calc_Sigma_or_Tau_From_Diameter" prefWidth="260.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label fx:id="L_Calc_Sigma_or_Tau_From_Diameter" text="---" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </GridPane>
+
+</VBox>

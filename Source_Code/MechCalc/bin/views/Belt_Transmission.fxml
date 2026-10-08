@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- Note: Make sure to add fx:controller="your.package.YourControllerName" to the VBox below -->
+<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Belt_TransmissionController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <!-- Header -->
+    <Label text="Belt Data Calculator">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+
+    <!-- Radio Buttons Section -->
+    <HBox alignment="CENTER" spacing="20.0">
+        <fx:define>
+            <ToggleGroup fx:id="calculationToggleGroup" />
+        </fx:define>
+        <RadioButton fx:id="a1_Radio" text="a1" toggleGroup="$calculationToggleGroup" selected="true" />
+        <RadioButton fx:id="a2_Radio" text="a2" toggleGroup="$calculationToggleGroup" />
+        <RadioButton fx:id="L_Radio" text="L" toggleGroup="$calculationToggleGroup" />
+    </HBox>
+
+    <!-- Text Fields Section -->
+    <GridPane alignment="CENTER" hgap="15.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        
+        <!-- d1 Input -->
+        <Label text="d1:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="d1_Text" promptText="Enter d1 value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <!-- d2 Input -->
+        <Label text="d2:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="d2_Text" promptText="Enter d2 value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <!-- I Input -->
+        <Label text="I:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="I_Text" promptText="Enter I value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+
+    <!-- ACTION BUTTON -->
+    <Button text="Calculate Belt Data" onAction="#Calculate_Belt_Data" defaultButton="true" prefWidth="200.0" prefHeight="35.0">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+
+    <!-- Result Label Section -->
+    <VBox alignment="CENTER" spacing="10.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-background-color: #f9f9f9; -fx-background-radius: 5;">
+        <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        </padding>
+        <Label text="Result:" textFill="#666666">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="Belt_Data_result_label" text="---">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+    </VBox>
+    
+</VBox>

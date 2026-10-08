@@ -1,0 +1,44 @@
+.sidebar-container {
+    -fx-background-color: #0f172a;
+    -fx-border-color: #1e293b;
+    -fx-border-width: 0 1 0 0; 
+}
+
+.sidebar-title {
+    -fx-text-fill: #64748b;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Base style for the buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cbd5e1;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 20;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    
+    /* We add an invisible left border here so the text doesn't "jump" when it becomes active */
+    -fx-border-width: 0 0 0 4;
+    -fx-border-color: transparent;
+}
+
+/* Hover effect */
+.nav-button:hover {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #ffffff;
+}
+
+/* ACTIVE / SELECTED STATE */
+.nav-button:selected {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #38bdf8; /* Highlight color (Light Blue) */
+    -fx-border-color: transparent transparent transparent #38bdf8; /* Left accent line */
+}
+
+/* Optional: Keep it looking active even if the user hovers over the active button */
+.nav-button:selected:hover {
+    -fx-background-color: #1e293b;
+}
