@@ -16,7 +16,7 @@ these calculations for production-critical engineering without manual verificati
 PROJECT STRUCTURE:
 - /src/Controllers/      : Contains all mathematical logic classes (Domain).
 - /src/UI/               : Contains the JavaFX Main application and UI Controller.
-- /src/Resources/        : Contains the Main.fxml and style.css for the AWS look.
+- /src/Resources/        : Contains the .fxml and .css for the Ui.
 
 HOW TO RUN:
 1. Ensure you have Java JDK 11+ and JavaFX installed and configured in your IDE.
@@ -24,15 +24,6 @@ HOW TO RUN:
 3. Add VM options if running via CLI: 
    --module-path /path/to/javafx/lib --add-modules javafx.controls,javafx.fxml
 4. Run the UI.Main class.
-
-================================================================================
-
-TECHNICAL EXPLANATION (Simplified)
-
-- Controllers  ---> Mathematical formulas and their Labels with TextFields responsable for calculation logic.
-- application  ---> Main.java (default core of the app)
-- Navigation   ---> NavController.java (Self instiating controller responsable for navigation trough functions)
-
 
 
 
